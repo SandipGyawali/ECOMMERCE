@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 const Layout = lazy(() => import("./pages/Layout"));
 const SignIn = lazy(() => import("./pages/SignIn"));
 const SignUp = lazy(() => import("./pages/SignUp"));
+const SideBar = lazy(() => import("./components/SideBar/SideBar"));
 
 function Hello() {
   return (

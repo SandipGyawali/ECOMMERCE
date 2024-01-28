@@ -10,6 +10,7 @@
 
   /* colors */
   --background-color: #f7fafc;
+  --overlay-background-color: #00000085;
   --color: #fff;
   --logo-color: rgb(140, 183, 245);
   --logo-color-light: #8cb8f5e0;
@@ -32,6 +33,7 @@
 
   /* font style */
   --font-color: #505050;
+  --line-color: #dee2e7;
 }
 
 * {

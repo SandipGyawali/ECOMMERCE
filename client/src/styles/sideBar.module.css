@@ -1,0 +1,106 @@
+/* slide style effect */
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.sideBarContainer {
+  width: 280px;
+  height: 100%;
+  background-color: var(--color);
+  position: fixed;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transform: translateX(-100%); /* Start off-screen */
+}
+
+.show {
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.hide {
+  animation: slide-out 0.5s ease-out forwards;
+}
+
+/* hide the shown sidebar */
+.xmark {
+  position: relative;
+  top: 20px;
+  left: 235px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.xmark:hover {
+  color: var(--icon-color-light);
+}
+
+/* sidebar logo  */
+.sideBarLogo {
+  margin-top: 20px;
+  color: var(--logo-color);
+  margin-left: 40px;
+}
+
+/* side bar options styling */
+.sideBarOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* single option  */
+.option {
+  margin: 5px 0px 5px 30px;
+  width: 200px;
+  padding: 10px 0 10px 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.option a {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.option:hover {
+  background-color: #f0f2f4;
+  border-radius: 10px;
+}
+
+/* click effect style */
+.option:active {
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease;
+}
+
+.sideBarIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--icon-color);
+}
+
+/* line for the sidebar */
+.line {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 10px;
+  height: 1px;
+  background-color: var(--line-color);
+}
