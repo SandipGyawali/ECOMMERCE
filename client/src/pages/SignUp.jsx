@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string, ref } from "yup";
 import styles from "../styles/signIn.module.css";
-import Google from "../assets/google.png";
 
 //validation schema for the form
 const schema = object({
@@ -87,7 +86,7 @@ function SignUp() {
         onClick={handleGoogleSubmit}
         className={styles.submitGoogle}
       >
-        <img src={Google} alt="" width={20} height={20} />
+        <img src="/images/google.png" alt="" width={20} height={20} />
         Sign In With Google
       </button>
     </div>

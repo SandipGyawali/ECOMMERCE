@@ -11,15 +11,27 @@
   /* colors */
   --background-color: #f7fafc;
   --color: #fff;
+  --logo-color: rgb(140, 183, 245);
+  --logo-color-light: #8cb8f5e0;
 
   /* border color */
   --border-color: #33333341;
   --error-color: #c40000;
   --button-color: #f7ca00;
+  --border-color-2: rgb(140, 183, 245);
 
   /* border radius */
   --border-radius: 10px;
   --border-radius-light: 5px;
+
+  /* icon styling */
+  --icon-color: #8b96a5;
+  --icon-color-light: #8b96a5b4;
+  --icon-width: 21px;
+  --icon-height: 21px;
+
+  /* font style */
+  --font-color: #505050;
 }
 
 * {
@@ -31,3 +43,10 @@
 body {
   background-color: var(--background-color);
 }
+
+/* 
+  pixel responsiveness breakpoint
+  1. 576px
+  2. 768px 
+  3. 1024px
+*/

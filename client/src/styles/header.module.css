@@ -1,0 +1,145 @@
+.navMain {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--color);
+  height: 86px;
+  width: 100%;
+  align-items: center;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 46px;
+  padding: 1px 23.786px 1px 0px;
+  gap: 6.214px;
+}
+
+/* brand name */
+.brandName {
+  font-size: 35px;
+  font-weight: bold;
+  color: var(--logo-color);
+}
+
+/* search box */
+.searchBox {
+  height: 40px;
+  width: 325px;
+  flex-shrink: 0;
+  outline: none;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  padding-left: 10px;
+  font-size: 16px;
+  border: 2px solid var(--border-color-2);
+}
+
+.categoryList {
+  height: 40px;
+  outline: none;
+  border: 2px solid var(--border-color-2);
+  border-left: none;
+}
+
+.submitBtn {
+  border: 1px solid var(--border-color-2);
+  background-color: var(--logo-color);
+  color: var(--color);
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border-top-right-radius: var(--border-radius-light);
+  border-bottom-right-radius: var(--border-radius-light);
+}
+
+.submitBtn:hover {
+  background-color: var(--logo-color-light);
+}
+
+/* right nav styling */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.redirectNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* icon color */
+.icon {
+  color: var(--icon-color);
+  height: var(--icon-width);
+  width: var(--icon-height);
+}
+
+.icon:hover {
+  color: var(--icon-color-light);
+}
+
+.iconName {
+  font-size: 12px;
+  font-style: normal;
+  text-transform: capitalize;
+  line-height: normal;
+  color: var(--icon-color);
+}
+
+@media screen and (max-width: 1024px) {
+  .searchBox {
+    width: 250px;
+  }
+
+  .categoryList {
+    position: absolute;
+    display: none;
+  }
+
+  .navRight {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navContainer {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .categoryList {
+    position: absolute;
+    display: none;
+  }
+
+  .brandName {
+    font-size: 30px;
+  }
+
+  .searchBox {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navRight {
+    display: none;
+  }
+
+  .searchBox {
+    width: 120px;
+  }
+}
