@@ -6,12 +6,21 @@ import {
   faUser,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { show } from "../../redux/slice/sideBar";
 
 function Header() {
+  const dispatch = useDispatch();
   return (
     <header id="navbar-main" className={styles.navMain}>
       <div id="navbar" className={styles.navContainer}>
         <div className={styles.navLeft}>
+          <FontAwesomeIcon
+            icon={faBars}
+            className={styles.headerBar}
+            onClick={() => dispatch(show())}
+          />
           <span className={styles.brandName}>Brand</span>
         </div>
         <div className={styles.navFill}>

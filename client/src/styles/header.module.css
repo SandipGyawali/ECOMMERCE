@@ -30,6 +30,11 @@
   color: var(--logo-color);
 }
 
+/* header bar style */
+.headerBar {
+  cursor: pointer;
+}
+
 /* search box */
 .searchBox {
   height: 40px;
