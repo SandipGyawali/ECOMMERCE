@@ -12,13 +12,12 @@
   --background-color: #f7fafc;
   --overlay-background-color: #00000085;
   --color: #fff;
-  --logo-color: rgb(140, 183, 245);
+  --logo-color: #8cb7f5;
   --logo-color-light: #8cb8f5e0;
 
   /* border color */
   --border-color: #33333341;
   --error-color: #c40000;
-  --button-color: #f7ca00;
   --border-color-2: rgb(140, 183, 245);
 
   /* border radius */

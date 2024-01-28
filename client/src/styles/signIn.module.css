@@ -45,20 +45,20 @@
 
 /* submit button */
 .submitBtn {
-  background-color: var(--button-color);
+  background-color: var(--logo-color);
+  font-weight: 600;
   outline: none;
   border: none;
   border-radius: var(--border-radius-light);
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
-  font-weight: 500;
 }
 
 /* submit button, redirect btn hover effect*/
 .submitBtn:hover,
 .redirectWrapper a:hover {
-  background-color: #f7ca00af;
+  background-color: var(--logo-color-light);
   transition: 0.3s ease;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .submitGoogle:hover {
-  border-color: #f7ca00af;
+  border-color: var(--button-color);
   transition: 0.3s ease;
 }
 
@@ -124,6 +124,7 @@
 .redirectWrapper a {
   background-color: var(--button-color);
   border-radius: var(--border-radius-light);
+  color: #000;
   width: 200px;
   height: 40px;
   text-align: center;
