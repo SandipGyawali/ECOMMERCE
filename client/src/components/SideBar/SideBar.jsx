@@ -26,6 +26,7 @@ function SideBar() {
       className={`${styles.sideBarContainer} ${
         showSideBar ? styles.show : styles.hide
       }`}
+      data-visible={showSideBar}
     >
       <FontAwesomeIcon
         icon={faXmark}
