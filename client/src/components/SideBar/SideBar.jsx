@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import {
   faHome,
   faBars,
-  faHeart,
   faStar,
   faXmark,
   faUser,
@@ -17,6 +15,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/sideBar.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { hide } from "../../redux/slice/sideBar";
+import Option from "./Option";
+import Line from "./Line";
 
 function SideBar() {
   const dispatch = useDispatch();
@@ -34,77 +34,29 @@ function SideBar() {
         className={styles.xmark}
       />
       <h2 className={styles.sideBarLogo}>Brand</h2>
-
-      <div>
-        <div className={styles.line}></div>
-      </div>
+      <Line />
 
       <div className={styles.sideBarOptions}>
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faHome} className={styles.sideBarIcon} />
-          <Link to="/">Rank</Link>
-        </div>
-
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faBars} className={styles.sideBarIcon} />
-          <Link to="/">Categories</Link>
-        </div>
-
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faStar} className={styles.sideBarIcon} />
-          <Link to="/">Favorite</Link>
-        </div>
-
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faUser} className={styles.sideBarIcon} />
-          <Link to="/">User</Link>
-        </div>
+        <Option icon={faHome} name="Rank" />
+        <Option icon={faBars} name="Categories" />
+        <Option icon={faStar} name="Favorite" />
+        <Option icon={faUser} name="User" />
       </div>
 
-      <div>
-        <div className={styles.line}></div>
-      </div>
+      <Line />
 
       <div className={styles.sideBarOptions}>
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faGlobe} className={styles.sideBarIcon} />
-          <Link to="/">English | USD</Link>
-        </div>
-
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faHeadphones} className={styles.sideBarIcon} />
-          <Link to="/">Contact Us</Link>
-        </div>
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faBuilding} className={styles.sideBarIcon} />
-          <Link to="/">About</Link>
-        </div>
+        <Option icon={faGlobe} name="English | USD" />
+        <Option icon={faHeadphones} name="Contact Us" />
+        <Option icon={faBuilding} name="About" />
       </div>
 
-      <div>
-        <div className={styles.line}></div>
-      </div>
+      <Line />
 
       <div className={styles.sideBarOptions}>
-        <div className={styles.option}>
-          <FontAwesomeIcon
-            icon={faHandshakeSimple}
-            className={styles.sideBarIcon}
-          />
-          <Link to="/">Partnership</Link>
-        </div>
-        <div className={styles.option}>
-          <FontAwesomeIcon icon={faFile} className={styles.sideBarIcon} />
-          <Link to="/">User agreement</Link>
-        </div>
-
-        <div className={styles.option}>
-          <FontAwesomeIcon
-            icon={faShieldHalved}
-            className={styles.sideBarIcon}
-          />
-          <Link to="/">Privacy Policy</Link>
-        </div>
+        <Option icon={faHandshakeSimple} name="Partnership" />
+        <Option icon={faFile} name="User agreement" />
+        <Option icon={faShieldHalved} name="Privacy Policy" />
       </div>
     </div>
   );
