@@ -81,7 +81,7 @@
 }
 
 .submitGoogle:hover {
-  border-color: var(--button-color);
+  border-color: var(--logo-color);
   transition: 0.3s ease;
 }
 

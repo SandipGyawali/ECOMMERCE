@@ -86,7 +86,7 @@ function SignUp() {
         onClick={handleGoogleSubmit}
         className={styles.submitGoogle}
       >
-        <img src="/images/google.png" alt="" width={20} height={20} />
+        <img src="/images/google.png" alt="google-img" width={20} height={20} />
         Sign In With Google
       </button>
     </div>
