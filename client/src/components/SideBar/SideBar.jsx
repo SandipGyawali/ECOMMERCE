@@ -6,10 +6,9 @@ import {
   faUser,
   faShieldHalved,
   faHandshakeSimple,
-  faFile,
-  faGlobe,
+  faCartShopping,
+  faHeart,
   faHeadphones,
-  faBuilding,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../../styles/sideBar.module.css";
@@ -37,7 +36,7 @@ function SideBar() {
       <Line />
 
       <div className={styles.sideBarOptions}>
-        <Option icon={faHome} name="Rank" />
+        <Option icon={faHome} name="Home" />
         <Option icon={faBars} name="Categories" />
         <Option icon={faStar} name="Favorite" />
         <Option icon={faUser} name="User" />
@@ -46,16 +45,15 @@ function SideBar() {
       <Line />
 
       <div className={styles.sideBarOptions}>
-        <Option icon={faGlobe} name="English | USD" />
-        <Option icon={faHeadphones} name="Contact Us" />
-        <Option icon={faBuilding} name="About" />
+        <Option icon={faCartShopping} name="My Cart" />
+        <Option icon={faHeart} name="Orders" />
       </div>
 
       <Line />
 
       <div className={styles.sideBarOptions}>
         <Option icon={faHandshakeSimple} name="Partnership" />
-        <Option icon={faFile} name="User agreement" />
+        <Option icon={faHeadphones} name="Contact Us" />
         <Option icon={faShieldHalved} name="Privacy Policy" />
       </div>
     </div>
