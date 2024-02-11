@@ -1,34 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import Home from "./pages/Home";
 const Layout = lazy(() => import("./pages/Layout"));
 const SignIn = lazy(() => import("./pages/SignIn"));
 const SignUp = lazy(() => import("./pages/SignUp"));
-const SideBar = lazy(() => import("./components/SideBar/SideBar"));
-
-function Hello() {
-  return (
-    <div>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-      <h1>Home</h1>
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -36,7 +11,7 @@ function App() {
       <Suspense fallback={<p>Loading..</p>}>
         <Routes>
           <Route element={<Layout />}>
-            <Route path="/" element={<Hello />} />
+            <Route path="/" element={<Home />} />
           </Route>
 
           <Route path="/signin" element={<SignIn />} />

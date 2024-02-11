@@ -3,6 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string, ref } from "yup";
 import styles from "../styles/signIn.module.css";
 import { Link } from "react-router-dom";
+import { useLoginMutation } from "../redux/api/userApiSlice";
 
 //validation schema for the form
 const schema = object({
@@ -17,6 +18,7 @@ const schema = object({
 });
 
 function SignUp() {
+  const [login] = useLoginMutation();
   const {
     register,
     handleSubmit,
@@ -24,9 +26,6 @@ function SignUp() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-
-  // form submit handler
-  const onSubmit = (data) => console.log(data);
 
   function handleGoogleSubmit() {
     console.log("THis is google button");
@@ -36,7 +35,7 @@ function SignUp() {
   return (
     <div className={styles.formWrapper}>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(login)}
         id="signIn-form"
         className={styles.form}
       >

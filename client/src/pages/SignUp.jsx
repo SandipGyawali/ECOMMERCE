@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { object, string, ref } from "yup";
 import styles from "../styles/signIn.module.css";
+import { useSignUpMutation } from "../redux/api/userApiSlice";
 
 //validation schema for the form
 const schema = object({
@@ -17,6 +18,7 @@ const schema = object({
 });
 
 function SignUp() {
+  const [signUp] = useSignUpMutation();
   const {
     register,
     handleSubmit,
@@ -25,19 +27,15 @@ function SignUp() {
     resolver: yupResolver(schema),
   });
 
-  // form submit handler
-  const onSubmit = (data) => console.log(data);
-
-  //google submit
-  function handleGoogleSubmit() {
-    console.log("Google Submit");
-  }
+  const googleAuth = () => {
+    window.open("http://localhost:8081/auth/google", "_self");
+  };
 
   // implementation of form using react-hook-form
   return (
     <div className={styles.formWrapper}>
       <form
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(signUp)}
         id="signIn-form"
         className={styles.form}
       >
@@ -83,7 +81,7 @@ function SignUp() {
 
       <button
         type="submit"
-        onClick={handleGoogleSubmit}
+        onClick={googleAuth}
         className={styles.submitGoogle}
       >
         <img src="/images/google.png" alt="google-img" width={20} height={20} />
