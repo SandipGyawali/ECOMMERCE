@@ -50,9 +50,8 @@ const signIn = async (req, res, next) => {
       });
     }
 
-    const isPasswordCorrect = await bcrypt.compare(
-      req.body.password,
-      existingUser.password
+    const isPasswordCorrect = await existingUser.isValidPassword(
+      req.body.password
     );
 
     if (!isPasswordCorrect) {

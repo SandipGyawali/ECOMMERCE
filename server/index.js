@@ -13,7 +13,9 @@ const { httpLogger } = require('./utils/logger');
 const Database = require('./config/database.js');
 const passport = require('passport');
 const cookieParser = require('cookie-parser');
-const userRoutes = require('./routes/user.route.js');
+const userRoutes = require('./routes/auth/user.route.js');
+const googleRoutes = require('./routes/auth/googleAuth.js');
+const extraRoutes = require('./routes/extra.route.js');
 
 // security based middleware
 app.use(helmet());
@@ -49,8 +51,9 @@ app.use(express.json()); //parses the data to the json format
 app.use(express.urlencoded({ extended: true })); //parse the x-www-form-urlencoded
 app.use(cookieParser()); //for parsing cookie
 
-// import passport.js jwt strategy
+// jwt and google auth strategy
 require('./config/passport.js');
+require('./config/google.passport.js');
 
 // initializing the passport.js
 app.use(passport.initialize());
@@ -58,15 +61,9 @@ app.use(passport.initialize());
 // http logger
 app.use(httpLogger(logger));
 
-app.use('/users', userRoutes);
-
-app.get(
-  '/protected',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    res.json(req.user);
-  }
-);
+app.use('/auth/users', userRoutes);
+app.use('/auth/google', googleRoutes);
+app.use('/api', extraRoutes);
 
 // global error handler middleware
 app.use(ErrorHandler);
