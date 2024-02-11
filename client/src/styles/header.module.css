@@ -53,6 +53,7 @@
   outline: none;
   border: 2px solid var(--border-color-2);
   border-left: none;
+  font-size: 14px;
 }
 
 .submitBtn {
@@ -102,6 +103,16 @@
   text-transform: capitalize;
   line-height: normal;
   color: var(--icon-color);
+}
+
+/* profile image style */
+.profileImg {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
 }
 
 @media screen and (max-width: 1024px) {

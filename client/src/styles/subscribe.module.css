@@ -1,0 +1,70 @@
+/* subscriber box style */
+.subscribeContainer {
+  text-align: center;
+  padding: 30px 5px 35px 5px;
+  background-color: #eff2f4;
+}
+
+span {
+  color: var(--icon-color);
+}
+
+form {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.emailInput {
+  height: 35px;
+  width: 300px;
+  border: 1px solid var(--icon-color);
+  outline: none;
+  border-radius: 5px;
+  padding-left: 8px;
+}
+
+.subscribeSubmit {
+  background-color: var(--logo-color);
+  color: var(--color);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  height: 35px;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.subscribeSubmit:hover {
+  background-color: var(--logo-color-light);
+}
+
+/* email input error on subscribe */
+.emailInputError {
+  border: 1px solid var(--error-color);
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+  .emailInput {
+    width: 200px;
+  }
+
+  .toastBox {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* react toast box */
+  .toastBox {
+    font-size: 12px;
+    width: 65%;
+    position: absolute;
+    top: 10px;
+    left: 120px;
+  }
+}
