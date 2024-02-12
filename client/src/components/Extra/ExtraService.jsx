@@ -10,8 +10,8 @@ import styles from "../../styles/extraService.module.css";
 function ExtraServices() {
   return (
     <div className={styles.serviceContainer} id="serve_container">
-      <div className="serviceWrapper">
-        <div className="serviceTitle">
+      <div className={styles.serviceWrapper}>
+        <div className={styles.serviceTitle}>
           <h2>Our extra Services</h2>
         </div>
         <div className={styles.serviceBoxWrapper}>

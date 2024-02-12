@@ -1,17 +1,18 @@
+/* eslint-disable react/prop-types */
 import styles from "../../styles/recommendedItem.module.css";
 
-function RecommendedItem() {
+function RecommendedItem({ data }) {
   return (
     <div className={styles.item}>
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKJD00tv4ZJ8j7YidwG5wXmxKf0aTT3HXTGsjOELpAxcmvaXy71wnBzPM-kLlnWwLksQ0&usqp=CAU"
+        src={data.productImg[0]}
         alt="product_img"
         className={styles.productImg}
       />
       <div className={styles.productDesc}>
-        <span className={styles.price}>$230</span>
+        <span className={styles.price}>${data.price.amount}</span>
         <div className={styles.info}>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+          <span>{data.name}</span>
         </div>
       </div>
     </div>

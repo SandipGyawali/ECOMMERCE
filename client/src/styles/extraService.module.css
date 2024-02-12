@@ -1,18 +1,21 @@
 .serviceContainer {
   max-width: 1355px;
-  width: 82%;
+  width: 80%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 0 auto;
+}
+
+.serviceWrapper {
+  width: 100%;
 }
 
 .serviceBoxWrapper {
   margin-top: 40px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  gap: 78px;
   flex-wrap: wrap;
 }
 
@@ -57,19 +60,12 @@
 
 @media screen and (max-width: 1711px) {
   .serviceBoxWrapper {
-    justify-content: space-between;
+    gap: 2vw;
   }
 }
 
-@media screen and (max-width: 1555px) {
+@media screen and (max-width: 735px) {
   .serviceBoxWrapper {
-    gap: 1vw;
     justify-content: space-evenly;
-  }
-}
-
-@media screen and (max-width: 708px) {
-  .serviceBoxWrapper {
-    gap: 3vw;
   }
 }
