@@ -12,7 +12,24 @@ export const extraApiSlice = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+    recommendedItems: builder.query({
+      query: () => ({
+        url: "/api/recommendedItems",
+        method: "GET",
+      }),
+    }),
+
+    dealAndOffers: builder.query({
+      query: () => ({
+        url: "/api/dealAndOffers",
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useSubscribeMutation } = extraApiSlice;
+export const {
+  useSubscribeMutation,
+  useRecommendedItemsQuery,
+  useDealAndOffersQuery,
+} = extraApiSlice;
