@@ -3,6 +3,8 @@ const handHeldProduct = require('../models/handHeld.model');
 const WearableTechProduct = require('../models/wearableTechProduct.model');
 const KitchenItem = require('../models/kitchenItem.mode');
 const Furniture = require('../models/furniture.model');
+const Camera = require('../models/camera.model');
+const _ = require('lodash');
 
 /*
   email subscribe logic
@@ -47,20 +49,22 @@ const recommendedItems = async (req, res) => {
     // get the random items from the list and then return as a json format
     // include all the section
     // for current we get the 5 random data form the two different collection
-    const [handHeldData, wearableData, kitchenData, furnitureData] =
+    const [handHeldData, wearableData, kitchenData, furnitureData, cameraData] =
       await Promise.all([
-        handHeldProduct.aggregate([{ $sample: { size: 3 } }]),
-        WearableTechProduct.aggregate([{ $sample: { size: 3 } }]),
+        handHeldProduct.aggregate([{ $sample: { size: 2 } }]),
+        WearableTechProduct.aggregate([{ $sample: { size: 2 } }]),
         KitchenItem.aggregate([{ $sample: { size: 2 } }]),
         Furniture.aggregate([{ $sample: { size: 2 } }]),
+        Camera.aggregate([{ $sample: { size: 2 } }]),
       ]);
 
-    const randomRecommendedItems = [
+    const randomRecommendedItems = _.shuffle([
       ...handHeldData,
       ...wearableData,
       ...kitchenData,
       ...furnitureData,
-    ];
+      ...cameraData,
+    ]);
 
     res.status(200).json(randomRecommendedItems);
   } catch (err) {
@@ -76,7 +80,7 @@ const dealAndOffers = async (req, res) => {
       WearableTechProduct.aggregate([{ $sample: { size: 2 } }]),
     ]);
 
-    const randomItems = [...handHeldData, ...wearableData];
+    const randomItems = _.shuffle([...handHeldData, ...wearableData]);
 
     res.status(200).json(randomItems);
   } catch (err) {
