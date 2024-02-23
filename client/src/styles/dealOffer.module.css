@@ -1,0 +1,153 @@
+.dealContainer {
+  max-width: 1355px;
+  width: 80%;
+  height: 240px;
+  margin: 30px auto;
+  border: 1px solid var(--line-color);
+  border-radius: 8px;
+  background-color: var(--color);
+}
+
+.dealOfferWrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.date {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.unit {
+  background-color: #606060;
+  width: 45px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.unit span {
+  color: var(--color);
+}
+
+.dealOffer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.dealSubHeading {
+  font-size: 18px;
+}
+
+.itemWrapper {
+  display: flex;
+}
+
+.item {
+  border-right: 1px solid var(--line-color);
+  width: 220px;
+  height: 238px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.item:first-child {
+  border-left: 1px solid var(--line-color);
+}
+
+.item:last-child {
+  border-right: none;
+}
+
+.item img {
+  width: 180px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.offerPercentWrapper {
+  font-size: 16px;
+  color: var(--color);
+  border-radius: 15px;
+  background-color: rgba(240, 128, 128, 0.295);
+  padding: 3px 8px;
+}
+
+.offerPercentWrapper span {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+@media (max-width: 1450px) {
+  .dealContainer {
+    height: fit-content;
+  }
+
+  .dealOfferWrapper {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .dealOffer {
+    gap: 10px;
+  }
+
+  .item {
+    border: none;
+  }
+
+  .item:first-child {
+    border: none;
+  }
+}
+
+@media screen and (max-width: 1065px) {
+  .itemWrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .dealOfferWrapper,
+  .itemWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .item {
+    width: 80%; /* Adjust item width for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .dealContainer {
+    width: 95%; /* Increase width for small devices */
+  }
+
+  .date,
+  .unit {
+    font-size: 14px; /* Adjust font size for small devices */
+  }
+
+  .item {
+    width: 80%; /* Adjust item width for phones */
+  }
+}
